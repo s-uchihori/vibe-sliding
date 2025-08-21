@@ -202,10 +202,6 @@ Slidevの主要な3つの機能を紹介します。
 -->
 
 ---
-layout: iframe-right
-url: https://sli.dev
-transition: slide-left
----
 
 # 🖥️ コードハイライト機能
 
@@ -232,16 +228,6 @@ const user: User = {
 
 console.log(greetUser(user))
 ```
-
-<v-click>
-
-📝 **特徴**
-- 行ハイライト
-- 段階的表示
-- 言語自動検出
-- テーマカスタマイズ
-
-</v-click>
 
 <!--
 Shikiを使った高度なコードハイライト機能。
@@ -324,6 +310,147 @@ graph TD
 <!--
 数式やダイアグラムも簡単に埋め込めます。
 技術プレゼンテーションに必要な要素が全て揃っています。
+-->
+
+---
+transition: slide-left
+layout: center
+---
+
+# 📊 リッチなデータビジュアライゼーション
+
+Chart.jsを使用した高度なチャート表現
+
+<v-clicks>
+
+<div class="grid grid-cols-2 gap-8 mt-10">
+  <div>
+    <LineChart 
+      title="プロジェクト成長推移"
+      :labels="['1月', '2月', '3月', '4月', '5月', '6月']"
+      :datasets="[
+        {
+          label: 'ユーザー数 (千人)',
+          data: [12, 19, 35, 55, 82, 120],
+          borderColor: 'rgb(147, 51, 234)',
+          backgroundColor: 'rgba(147, 51, 234, 0.1)',
+          fill: true,
+          tension: 0.4
+        },
+        {
+          label: 'アクティブ率 (%)',
+          data: [65, 68, 72, 78, 85, 92],
+          borderColor: 'rgb(59, 130, 246)',
+          backgroundColor: 'rgba(59, 130, 246, 0.1)',
+          fill: true,
+          tension: 0.4
+        }
+      ]"
+    />
+  </div>
+  <div>
+    <BarChart 
+      title="フレームワーク人気度"
+      :labels="['Slidev', 'Reveal.js', 'Marp', 'Sli.dev', 'MDX']"
+      :datasets="[
+        {
+          label: 'GitHub Stars (k)',
+          data: [30, 65, 12, 8, 18],
+          backgroundColor: [
+            'rgba(147, 51, 234, 0.8)',
+            'rgba(59, 130, 246, 0.8)',
+            'rgba(236, 72, 153, 0.8)',
+            'rgba(34, 197, 94, 0.8)',
+            'rgba(251, 146, 60, 0.8)'
+          ],
+          borderColor: [
+            'rgb(147, 51, 234)',
+            'rgb(59, 130, 246)',
+            'rgb(236, 72, 153)',
+            'rgb(34, 197, 94)',
+            'rgb(251, 146, 60)'
+          ],
+          borderWidth: 2
+        }
+      ]"
+    />
+  </div>
+</div>
+
+</v-clicks>
+
+<!--
+Chart.jsを使用することで、美しくインタラクティブなチャートを簡単に埋め込むことができます。
+データの視覚化により、プレゼンテーションの説得力が大幅に向上します。
+-->
+
+---
+transition: fade
+layout: two-cols
+---
+
+# 🎯 スキル分析チャート
+
+開発者のスキルセットを可視化
+
+<div class="mt-8">
+  <RadarChart 
+    title="フルスタックエンジニアのスキル"
+    :labels="['React/Vue', 'Node.js', 'Docker/K8s', 'PostgreSQL', 'React Native', 'OAuth/JWT']"
+    :datasets="[
+      {
+        label: '現在のレベル',
+        data: [92, 85, 78, 75, 65, 88],
+        borderColor: 'rgba(147, 51, 234, 1)',
+        backgroundColor: 'rgba(147, 51, 234, 0.2)',
+        borderWidth: 2,
+        pointBackgroundColor: 'rgba(147, 51, 234, 1)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgba(147, 51, 234, 1)'
+      },
+      {
+        label: '目標レベル',
+        data: [95, 90, 90, 85, 80, 95],
+        borderColor: 'rgba(34, 197, 94, 1)',
+        backgroundColor: 'rgba(34, 197, 94, 0.2)',
+        borderWidth: 2,
+        pointBackgroundColor: 'rgba(34, 197, 94, 1)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgba(34, 197, 94, 1)'
+      }
+    ]"
+  />
+</div>
+
+::right::
+
+<div class="flex flex-col items-center justify-center h-full">
+  <DoughnutChart 
+    title="技術スタック比率"
+    :labels="['Frontend', 'Backend', 'DevOps', 'Database', 'Testing']"
+    :data="[35, 30, 20, 10, 5]"
+    :colors="[
+      'rgba(147, 51, 234, 0.8)',
+      'rgba(59, 130, 246, 0.8)',
+      'rgba(34, 197, 94, 0.8)',
+      'rgba(251, 146, 60, 0.8)',
+      'rgba(236, 72, 153, 0.8)'
+    ]"
+  />
+  
+  <v-click>
+  <div class="mt-8 text-center">
+    <p class="text-gray-400">各分野のバランスが重要</p>
+    <p class="text-sm text-gray-500 mt-2">※ 2024年調査データ</p>
+  </div>
+  </v-click>
+</div>
+
+<!--
+レーダーチャートとドーナツチャートを使って、スキルセットや技術スタックの構成を視覚的に表現できます。
+採用面接や技術評価のプレゼンテーションに最適です。
 -->
 
 ---
