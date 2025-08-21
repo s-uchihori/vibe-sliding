@@ -235,6 +235,49 @@ Shikiを使った高度なコードハイライト機能。
 -->
 
 ---
+layout: two-cols
+---
+
+# 📂 外部ファイルインポート
+## コードの再利用
+
+外部ファイルから直接コードを取り込み
+
+<v-clicks>
+
+- 📄 実際のソースコードを表示
+- 🔄 ファイル変更が自動反映
+- 🎯 特定の行範囲を指定可能
+- 🏷️ リージョンタグで範囲指定
+
+</v-clicks>
+
+::right::
+
+<div class="mt-4">
+
+### snippets/external.ts
+
+<<< @/snippets/external.ts#snippet{ts}
+
+### 使用例
+
+```ts
+import { emptyArray } from './external'
+
+// 10個の空配列を作成
+const arr = emptyArray<string>(10)
+console.log(arr.length) // 10
+```
+
+</div>
+
+<!--
+外部ファイルのインポート機能により、実際のコードベースから
+直接コードを取り込んでスライドに表示できます。
+-->
+
+---
 transition: fade
 layout: center
 ---
@@ -313,6 +356,122 @@ graph TD
 -->
 
 ---
+layout: two-cols
+transition: slide-up
+---
+
+# 💻 Monaco Editor
+## ライブコーディング環境
+
+VSCodeのエディタをスライド内に埋め込み可能
+
+<v-clicks>
+
+- 🎨 シンタックスハイライト
+- 📝 オートコンプリート
+- 🔧 リアルタイム編集
+- 💡 IntelliSense対応
+
+</v-clicks>
+
+::right::
+
+<div class="mt-4">
+
+```ts {monaco}
+// TypeScriptコードをリアルタイム編集
+interface User {
+  id: number
+  name: string
+  email: string
+}
+
+class UserService {
+  private users: User[] = []
+  
+  addUser(user: User): void {
+    this.users.push(user)
+    console.log(`Added: ${user.name}`)
+  }
+  
+  getUsers(): User[] {
+    return this.users
+  }
+}
+
+// 実行してみましょう！
+const service = new UserService()
+service.addUser({
+  id: 1,
+  name: "Alice",
+  email: "alice@example.com"
+})
+```
+
+</div>
+
+<!--
+Monaco Editorを使えば、プレゼン中にライブコーディングができます。
+参加者と一緒にコードを書きながら説明することが可能です。
+-->
+
+---
+layout: center
+---
+
+# 🏃 コードランナー
+## インタラクティブな実行デモ
+
+<div class="grid grid-cols-2 gap-8 mt-8">
+
+<div>
+
+### 📝 コードを書く
+
+```ts {monaco-run} {autorun:false}
+// Fibonacci数列を生成
+function fibonacci(n: number): number[] {
+  const result = [0, 1]
+  for (let i = 2; i < n; i++) {
+    result.push(
+      result[i - 1] + result[i - 2]
+    )
+  }
+  return result
+}
+
+// 実行結果を表示
+const fib = fibonacci(10)
+console.log('Fibonacci:', fib)
+
+// 合計値を計算
+const sum = fib.reduce((a, b) => a + b, 0)
+console.log('Sum:', sum)
+```
+
+</div>
+
+<div>
+
+### 🎯 実行結果
+
+<div class="bg-gray-900 rounded-lg p-4 font-mono text-sm">
+  <div class="text-green-400">▶ 実行ボタンをクリック</div>
+  <div class="mt-2 text-gray-300">
+    <!-- 実行結果がここに表示されます -->
+  </div>
+</div>
+
+</div>
+
+</div>
+
+<!--
+コードランナー機能により、JavaScript/TypeScriptのコードを
+その場で実行してデモンストレーションできます。
+-->
+
+---
 transition: slide-left
 layout: center
 ---
@@ -382,6 +541,117 @@ Chart.jsを使用した高度なチャート表現
 <!--
 Chart.jsを使用することで、美しくインタラクティブなチャートを簡単に埋め込むことができます。
 データの視覚化により、プレゼンテーションの説得力が大幅に向上します。
+-->
+
+---
+layout: center
+---
+
+# 🏗️ PlantUMLアーキテクチャ図
+## システム設計の可視化
+
+<div class="grid grid-cols-2 gap-4 items-center">
+<div>
+
+PlantUMLで複雑なシステム構成を図解
+
+<v-clicks>
+
+- 📐 テキストベースで図を定義
+- 🔄 バージョン管理が簡単
+- 🎨 自動レイアウト調整
+- 📊 多様な図形式に対応
+
+</v-clicks>
+
+</div>
+<div>
+
+```plantuml {scale: 0.7}
+@startuml
+!theme plain
+skinparam packageStyle rectangle
+
+package "Frontend" {
+  [React] as react
+  [Redux] as redux
+  [API] as client
+}
+
+package "Backend" {
+  [Express] as express
+  [Auth] as auth
+  [Logic] as logic
+}
+
+database "PostgreSQL" as db
+queue "Redis" as redis
+
+react --> redux
+redux --> client
+client ..> express : API
+express --> auth
+express --> logic
+logic --> db
+logic --> redis
+@enduml
+```
+
+</div>
+</div>
+
+<!--
+PlantUMLを使えば、複雑なアーキテクチャ図もテキストベースで管理できます。
+Gitでバージョン管理も簡単です。
+-->
+
+---
+layout: center
+---
+
+# ✏️ Rough記法
+## 手書き風アノテーション
+
+重要なポイントを視覚的に強調
+
+<div class="mt-8 text-2xl leading-relaxed">
+
+プレゼンテーションに <RoughNotation type="underline" color="#3B82F6">手書き風の温かみ</RoughNotation> を追加
+
+<v-clicks>
+
+<div class="mt-4">
+  <RoughNotation type="box" color="#10B981" :show="true">
+    重要なキーワード
+  </RoughNotation>
+  を目立たせる
+</div>
+
+<div class="mt-4">
+  削除する内容は <RoughNotation type="crossed-off" color="#EF4444" :show="true">取り消し線</RoughNotation> で表現
+</div>
+
+<div class="mt-4">
+  <RoughNotation type="circle" color="#8B5CF6" :iterations="2" :show="true">
+    丸で囲んで
+  </RoughNotation>
+  注目を集める
+</div>
+
+<div class="mt-4">
+  <RoughNotation type="highlight" color="#FDE047" :multiline="true" :show="true">
+    蛍光ペンでハイライト
+    複数行にも対応
+  </RoughNotation>
+</div>
+
+</v-clicks>
+
+</div>
+
+<!--
+Rough記法を使うと、デジタルなスライドに手書きの温かみを加えることができます。
+アニメーション付きで、徐々に描画されるエフェクトも可能です。
 -->
 
 ---

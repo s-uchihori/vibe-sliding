@@ -12,6 +12,7 @@
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
     "chart.js": "^4.5.0",
+    "rough-notation": "^0.5.1",
     "vue": "^3.5.18",
     "vue-chartjs": "^5.3.2"
   },
