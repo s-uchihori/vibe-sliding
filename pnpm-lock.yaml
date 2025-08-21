@@ -17,9 +17,15 @@ importers:
       '@slidev/theme-seriph':
         specifier: latest
         version: 0.25.0
+      canvas-confetti:
+        specifier: ^1.9.3
+        version: 1.9.3
       chart.js:
         specifier: ^4.5.0
         version: 4.5.0
+      matter-js:
+        specifier: ^0.20.0
+        version: 0.20.0
       rough-notation:
         specifier: ^0.5.1
         version: 0.5.1
@@ -1050,6 +1056,9 @@ packages:
   caniuse-lite@1.0.30001735:
     resolution: {integrity: sha512-EV/laoX7Wq2J9TQlyIXRxTJqIw4sxfXS4OYgudGxBYRuTv0q7AM6yMEpU/Vo1I94thg9U6EZ2NfZx9GJq83u7w==}
 
+  canvas-confetti@1.9.3:
+    resolution: {integrity: sha512-rFfTURMvmVEX1gyXFgn5QMn81bYk70qa0HLzcIOSVEyl57n6o9ItHeBtUSWdvKAPY0xlvBHno4/v3QPrT83q9g==}
+
   ccount@2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
 
@@ -1844,6 +1853,9 @@ packages:
     resolution: {integrity: sha512-LbbTuye+0dWRz2TS9KJ7wsnD4KAtpj0MVkWc90XvBa6AslXsT0hTBVH5k32pcSyHH1fst9XEFJunXHktVy0zlg==}
     engines: {node: '>= 20'}
     hasBin: true
+
+  matter-js@0.20.0:
+    resolution: {integrity: sha512-iC9fYR7zVT3HppNnsFsp9XOoQdQN2tUyfaKg4CHLH8bN+j6GT4Gw7IH2rP0tflAebrHFw730RR3DkVSZRX8hwA==}
 
   mdast-util-find-and-replace@3.0.2:
     resolution: {integrity: sha512-Tmd1Vg/m3Xz43afeNxDIhWRtFZgM2VLyaf4vSTYwudTyeuTneoL3qtWMA5jeLyz/O1vDJmmV4QuScFCA2tBPwg==}
@@ -4060,6 +4072,8 @@ snapshots:
 
   caniuse-lite@1.0.30001735: {}
 
+  canvas-confetti@1.9.3: {}
+
   ccount@2.0.1: {}
 
   character-entities-html4@2.1.0: {}
@@ -4862,6 +4876,8 @@ snapshots:
   markdown-table@3.0.4: {}
 
   marked@16.2.0: {}
+
+  matter-js@0.20.0: {}
 
   mdast-util-find-and-replace@3.0.2:
     dependencies:
